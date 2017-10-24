@@ -2,6 +2,7 @@ package au.com.marlo.tests;
 
 import au.com.marlo.tests.routes.MyTestRouteBuilder;
 import au.com.marlo.tests.routes.NewRouteBuilder;
+import au.com.marlo.tests.routes.splitting.SplittingByFieldRouteBuilder;
 import org.apache.camel.CamelContext;
 import org.apache.camel.component.properties.PropertiesComponent;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -23,9 +24,9 @@ public class CamelApp
     public void boot() throws Exception {
         CamelContext context = new DefaultCamelContext();
 
-        PropertiesComponent pc = new PropertiesComponent("classpath:au.com.marlo.environment.properties");
-        context.addComponent("properties", pc);
-        context.addRoutes(new NewRouteBuilder());
+        /*PropertiesComponent pc = new PropertiesComponent("classpath:au.com.marlo.environment.properties");
+        context.addComponent("properties", pc);*/
+        context.addRoutes(new SplittingByFieldRouteBuilder());
 
         main.getCamelContexts().add(context);
         main.run();

@@ -23,11 +23,19 @@
       <version>${camel.version}</version>
     </dependency>
 
+
     <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-csv</artifactId>
+      <version>${camel.version}</version>
+    </dependency>
+
+
+    <!--<dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-quartz2</artifactId>
       <version>${camel.version}</version>
-      <!-- use the same version as your Camel core version -->
+      &lt;!&ndash; use the same version as your Camel core version &ndash;&gt;
     </dependency>
 
     <dependency>
@@ -40,7 +48,7 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-ftp</artifactId>
       <version>${camel.version}</version>
-    </dependency>
+    </dependency>-->
 
     <dependency>
       <groupId>org.slf4j</groupId>
