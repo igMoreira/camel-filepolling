@@ -12,6 +12,8 @@ public class SplittingByFieldRouteBuilder extends RouteBuilder {
         from("file:/tmp/camel_test_input?noop=true")
                 .unmarshal().csv()
                 .bean(GroupByField.class)
-                .log("${body}");
+                .split(body())
+                    .log("${body}")
+                .end();
     }
 }

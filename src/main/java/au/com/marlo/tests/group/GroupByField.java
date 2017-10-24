@@ -16,7 +16,7 @@ public class GroupByField {
     Logger LOG = LoggerFactory.getLogger(GroupByField.class.getSimpleName());
 
 
-    public Map group(List csvContent)
+    public List group(List csvContent)
     {
         Map groupedData = new HashMap<String, List<String>>();
 
@@ -30,7 +30,7 @@ public class GroupByField {
             group = (List) groupedData.get(fieldToGroup);
             group.add(row);
         }
-        return groupedData;
+        return new ArrayList(groupedData.values());
     }
 
 }
